@@ -14,15 +14,16 @@ public class Question_2_CheckPermutation {
         System.out.println("Enter second string:");
         String str2 = scanner.nextLine();
         scanner.close();
-        System.out.println(checkPermutation(str1, str2));
+
+        boolean result = checkPermutation(str1, str2);
+        System.out
+                .println(result ? "The strings are permutations of each other." : "The strings are NOT permutations.");
     }
 
     public static boolean checkPermutation(String str1, String str2) {
-        if (str1.length() != str2.length())
+        if (str1.length() != str2.length()) {
             return false;
-
-        if (str1.length() == 0 || str2.length() == 0)
-            return false;
+        }
 
         int[] asciiCounts = new int[128];
 
@@ -31,9 +32,10 @@ public class Question_2_CheckPermutation {
             asciiCounts[str2.charAt(i)]--;
         }
 
-        for (int i = 0; i < 128; i++)
+        for (int i = 0; i < 128; i++) {
             if (asciiCounts[i] != 0)
                 return false;
+        }
 
         return true;
     }
