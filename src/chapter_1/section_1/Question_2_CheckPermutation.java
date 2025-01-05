@@ -24,20 +24,17 @@ public class Question_2_CheckPermutation {
         if (str1.length() == 0 || str2.length() == 0)
             return false;
 
-        int[] ascii_str1 = new int[128];
-        int[] ascii_str2 = new int[128];
+        int[] asciiCounts = new int[128];
 
         for (int i = 0; i < str1.length(); i++) {
-            ascii_str1[str1.charAt(i)]++;
-            ascii_str2[str2.charAt(i)]++;
+            asciiCounts[str1.charAt(i)]++;
+            asciiCounts[str2.charAt(i)]--;
         }
 
-        for (int i = 0; i < 128; i++) {
-            // System.out.println("The ASCII value of " + (char) i + " = " + i + " " +
-            // ascii_str1[i]);
-            if (ascii_str1[i] != ascii_str2[i])
+        for (int i = 0; i < 128; i++)
+            if (asciiCounts[i] != 0)
                 return false;
-        }
+
         return true;
     }
 }
