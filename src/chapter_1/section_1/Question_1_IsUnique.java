@@ -1,9 +1,11 @@
-package chapter_1_arrays_and_strings;
+package chapter_1.section_1;
 
-// "Is Unique" Implement an algorithm to determine if a string has all unique
+// Problem 1.1: Is Unique
+// Implement an algorithm to determine if a string has all unique
 // characters. What if you cannot use additional data structures?
 
-public class IsUnique {
+public class Question_1_IsUnique {
+
     public static void main(String[] args) throws Exception {
         String str = "aabcde"; // true
         // String str = "abcde"; // false
