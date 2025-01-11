@@ -3,6 +3,7 @@ package chapter_1.section_1;
 import java.util.Scanner;
 
 // Problem 1.1: Is Unique
+// Prompt:
 // Given two strings, write a method to decide if one is a permutation of the other.
 
 public class Question_2_CheckPermutation {
