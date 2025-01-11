@@ -1,5 +1,9 @@
 package chapter_1.section_1;
 
+// Problem 1.3: URLify
+// Write a method to replace all spaces in a string with '%20'. You may assume that the string has sufficient space at the end to hold the additional characters, and you are given the "true" length of the string.
+// (Note: If implementing in Java, use a character array so that you can perform this operation in place.)
+
 public class Question_3_URLify {
     public static void main(String[] args) {
         char[] input = "Mr John Smith    ".toCharArray();
