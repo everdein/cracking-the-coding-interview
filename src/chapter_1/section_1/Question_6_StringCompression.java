@@ -8,7 +8,43 @@ package chapter_1.section_1;
 // assume the string has only uppercase and lowercase letters (a-z).
 
 public class Question_6_StringCompression {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        System.out.println(compressString("aabcccccaaa")); // a2b1c5a3
+        System.out.println(compressString("aabbcc")); // a2b2c2
+        System.out.println(compressString("abc")); // a1b1c1
+        System.out.println(compressString("aaa")); // a3
+        System.out.println(compressString("aa")); // a2
+        System.out.println(compressString("a")); // a1
+        System.out.println(compressString("")); // ""
+    }
+
+    public static String compressString(String str) {
+        int firstPointer = 0;
+        int secondPointer = 0;
+        String compressedString = "";
+
+        if (str.length() == 0) {
+            return str;
+        }
+
+        if (str.length() == 1) {
+            return str;
+        }
+
+        while (secondPointer < str.length()) {
+            if (str.charAt(firstPointer) == str.charAt(secondPointer)) {
+                secondPointer++;
+            } else if (str.charAt(firstPointer) != str.charAt(secondPointer)) {
+                compressedString = compressedString + str.charAt(firstPointer) + (secondPointer - firstPointer);
+                firstPointer = secondPointer;
+            }
+
+            if (secondPointer == str.length()) {
+                compressedString = compressedString + str.charAt(firstPointer) + (secondPointer - firstPointer);
+            }
+        }
+
+        return compressedString.length() < str.length() ? compressedString : str;
     }
 }
